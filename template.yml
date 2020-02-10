@@ -11,8 +11,8 @@ Resources:
           - vsw-j6cv3y42xzcbt7izy6j81
         SecurityGroupId: sg-j6ci9xnerwj6bvj0e4ej
       NasConfig:
-        UserId: -1
-        GroupId: -1
+        UserId: 10002
+        GroupId: 10002
         MountPoints:
           - ServerAddr: '12ff5b49627-xoj22.cn-hongkong.nas.aliyuncs.com:/'
             MountDir: /mnt/nas
