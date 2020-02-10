@@ -1,0 +1,33 @@
+#!/bin/bash
+
+#mkdir -p /tmp/unit/certs && \
+#unitd --state /tmp/unit --control unix:/tmp/control.unit.sock
+
+php7.4 -c /code -S 0.0.0.0:$FC_SERVER_PORT -t /code/.fun/nas
+
+
+# set +e
+
+# echo "start nginx"
+# nginx -c /code/.fun/root/etc/nginx/nginx.conf 
+
+# echo "start php-fpm"
+# php-fpm7.4 -c /code/.fun/root/usr/lib/php/7.4/php.ini-production -y /code/.fun/root/etc/php/7.4/fpm/php-fpm.conf 
+
+# sleep 5
+
+# while true
+# do
+#     echo "check ...."
+#     nginx_server=`ps aux | grep nginx | grep -v grep`
+#     if [ ! "$nginx_server" ]; then
+#         echo "restart nginx ..."
+#         nginx -c /code/.fun/root/etc/nginx/nginx.conf 
+#     fi
+#     php_fpm_server=`ps aux | grep php-fpm | grep -v grep`
+#     if [ ! "$php_fpm_server" ]; then
+#         echo "restart php-fpm ..."
+#         php-fpm7.4 -c /code/.fun/root/usr/lib/php/7.4/php.ini-production -y /code/.fun/root/etc/php/7.4/fpm/php-fpm.conf 
+#     fi
+#     sleep 10
+# done

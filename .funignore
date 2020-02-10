@@ -1,0 +1,6 @@
+.env
+template.yml
+.funignore
+.fun/nas
+.fun/tmp
+readme.md

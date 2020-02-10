@@ -1,0 +1,33 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  customruntime:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      Description: 'helloworld'
+      VpcConfig:
+        VpcId: 'vpc-j6ccne7rjafmtgh7zrk4o'
+        VSwitchIds: [ 'vsw-j6cv3y42xzcbt7izy6j81' ]
+        SecurityGroupId: 'sg-j6ci9xnerwj6bvj0e4ej'
+      NasConfig: 
+        UserId: -1
+        GroupId: -1
+        MountPoints: 
+          - ServerAddr: '12ff5b49627-xoj22.cn-hongkong.nas.aliyuncs.com:/'
+            MountDir: '/mnt/nas'
+
+    php-swoole:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Handler: index.handler
+        Runtime: custom
+        CodeUri: './'
+        MemorySize: 512
+        Timeout: 300
+        InstanceConcurrency: 1
+      Events:
+        httpTrigger:
+          Type: HTTP
+          Properties:
+            AuthType: ANONYMOUS
+            Methods: [ 'HEAD', 'POST', 'PUT', 'GET', 'DELETE']
