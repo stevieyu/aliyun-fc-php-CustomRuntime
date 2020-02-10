@@ -1,0 +1,4 @@
+nasMappings:
+  customruntime:
+    - localNasDir: .fun/root
+      remoteNasDir: /mnt/nas/root

@@ -4,30 +4,38 @@ Resources:
   customruntime:
     Type: 'Aliyun::Serverless::Service'
     Properties:
-      Description: 'helloworld'
+      Description: helloworld
       VpcConfig:
-        VpcId: 'vpc-j6ccne7rjafmtgh7zrk4o'
-        VSwitchIds: [ 'vsw-j6cv3y42xzcbt7izy6j81' ]
-        SecurityGroupId: 'sg-j6ci9xnerwj6bvj0e4ej'
-      NasConfig: 
+        VpcId: vpc-j6ccne7rjafmtgh7zrk4o
+        VSwitchIds:
+          - vsw-j6cv3y42xzcbt7izy6j81
+        SecurityGroupId: sg-j6ci9xnerwj6bvj0e4ej
+      NasConfig:
         UserId: -1
         GroupId: -1
-        MountPoints: 
+        MountPoints:
           - ServerAddr: '12ff5b49627-xoj22.cn-hongkong.nas.aliyuncs.com:/'
-            MountDir: '/mnt/nas'
-
+            MountDir: /mnt/nas
     php-swoole:
       Type: 'Aliyun::Serverless::Function'
       Properties:
         Handler: index.handler
         Runtime: custom
-        CodeUri: './'
+        CodeUri: ./
         MemorySize: 512
-        Timeout: 300
+        Timeout: 60
         InstanceConcurrency: 1
+        EnvironmentVariables:
+          LD_LIBRARY_PATH: >-
+            /mnt/nas/root/usr/lib:/mnt/nas/root/usr/lib/x86_64-linux-gnu:/mnt/nas/root/lib/x86_64-linux-gnu:/mnt/nas/root/usr/lib64
       Events:
         httpTrigger:
           Type: HTTP
           Properties:
             AuthType: ANONYMOUS
-            Methods: [ 'HEAD', 'POST', 'PUT', 'GET', 'DELETE']
+            Methods:
+              - HEAD
+              - POST
+              - PUT
+              - GET
+              - DELETE

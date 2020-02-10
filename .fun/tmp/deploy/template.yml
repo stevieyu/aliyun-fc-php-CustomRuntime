@@ -1,0 +1,21 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  customruntime:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      Description: helloworld
+      Role: >-
+        acs:ram::1928687499779704:role/aliyunfcgeneratedrole-cn-hongkong-customruntime
+      VpcConfig:
+        VpcId: vpc-j6ccne7rjafmtgh7zrk4o
+        VSwitchIds:
+          - vsw-j6cv3y42xzcbt7izy6j81
+        SecurityGroupId: sg-j6ci9xnerwj6bvj0e4ej
+      NasConfig:
+        UserId: 10003
+        GroupId: 10003
+        MountPoints:
+          - ServerAddr: '12ff5b49627-xoj22.cn-hongkong.nas.aliyuncs.com:/'
+            MountDir: /mnt/nas
+      InternetAccess: true
