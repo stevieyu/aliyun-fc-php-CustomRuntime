@@ -3,7 +3,9 @@
 #mkdir -p /tmp/unit/certs && \
 #unitd --state /tmp/unit --control unix:/tmp/control.unit.sock
 
-php7.4 -c /code -S 0.0.0.0:$FC_SERVER_PORT -t /code/.fun/nas
+export PATH=$PATH:/mnt/nas/root/usr/bin:/mnt/nas/root/usr/sbin
+
+php7.4 -c /code -S 0.0.0.0:$FC_SERVER_PORT -t /mnt/nas
 
 
 # set +e

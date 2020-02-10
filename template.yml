@@ -22,8 +22,8 @@ Resources:
         Handler: index.handler
         Runtime: custom
         CodeUri: ./
-        MemorySize: 512
-        Timeout: 60
+        MemorySize: 128
+        Timeout: 1
         InstanceConcurrency: 1
         EnvironmentVariables:
           LD_LIBRARY_PATH: >-
