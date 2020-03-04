@@ -8,13 +8,13 @@ Resources:
       VpcConfig:
         VpcId: vpc-j6ccne7rjafmtgh7zrk4o
         VSwitchIds:
-          - vsw-j6cv3y42xzcbt7izy6j81
+          - vsw-j6conwtcfurx5uhogyb2j
         SecurityGroupId: sg-j6ci9xnerwj6bvj0e4ej
       NasConfig:
         UserId: 10002
         GroupId: 10002
         MountPoints:
-          - ServerAddr: '12ff5b49627-xoj22.cn-hongkong.nas.aliyuncs.com:/'
+          - ServerAddr: '1213e74b022-hag27.cn-hongkong.nas.aliyuncs.com:/'
             MountDir: /mnt/nas
     php-swoole:
       Type: 'Aliyun::Serverless::Function'
