@@ -6,7 +6,7 @@
 export PATH=$PATH:/mnt/nas/root/usr/bin:/mnt/nas/root/usr/sbin
 
 #php7.4 -c /code -S 0.0.0.0:$FC_SERVER_PORT -t /mnt/nas
-php7.4 -c /code /code/http.php
+php7.4 -c /code /mnt/nas/http.php
 
 
 # set +e
