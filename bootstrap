@@ -1,8 +1,6 @@
 #!/bin/bash
 
-export PATH=$PATH:/mnt/nas/root/usr/bin:/mnt/nas/root/usr/sbin
-
 # php7.4 -c /code /mnt/nas/http.php
-# php7.4 /mnt/nas/laravel/bin/laravels start
+/mnt/nas/root/usr/bin/php7.4 -c /code /mnt/nas/laravel/bin/laravels start
 
-php7.4 -S 0.0.0.0:${FC_SERVER_PORT} -t /mnt/nas
+# /mnt/nas/root/usr/bin/php7.4 -S 0.0.0.0:${FC_SERVER_PORT} -t /mnt/nas
