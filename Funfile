@@ -1,19 +1,11 @@
 RUNTIME custom
 
-RUN sed -i -E 's/(security|deb).debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list && \
+RUN sed -i -E 's/(security-cdn|deb).debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list && \
 	apt-get update
 
 RUN apt-get -y install apt-transport-https lsb-release ca-certificates wget && \
 	wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg && \
 	echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
-
-#RUN apt-get install -y apt-transport-https lsb-release ca-certificates curl gnupg gnupg1 gnupg2 && \
-#	curl -sL https://nginx.org/keys/nginx_signing.key | apt-key add - && \
-#	echo "deb https://packages.nginx.org/unit/debian/ $(lsb_release -sc) unit" > /etc/apt/sources.list.d/unit.list
-
-#RUN apt-get install -y curl gnupg2 ca-certificates lsb-release && \
-#	curl -fsSL https://nginx.org/keys/nginx_signing.key | apt-key add - && \
-#	echo "deb http://nginx.org/packages/debian `lsb_release -sc` nginx" > /etc/apt/sources.list.d/nginx.list
 
 RUN apt-get update
 
@@ -46,10 +38,3 @@ RUN apt-get install -y php7.4-dev && \
 RUN ln -s /code/.fun/root/usr/bin/php7.4 /code/.fun/root/usr/bin/php && \
 	ln -s /code/.fun/root/usr/bin/phar7.4 /code/.fun/root/usr/bin/phar && \
 	ln -s /code/.fun/root/usr/bin/phar.phar7.4 /code/.fun/root/usr/bin/phar.phar
-
-#RUN fun-install apt-get install nginx
-#RUN fun-install apt-get install php7.4-fpm
-
-#RUN fun-install apt-get install unit
-#RUN fun-install apt-get install php7.4-embed
-#RUN fun-install apt-get install unit-php

@@ -16,7 +16,7 @@ Resources:
         UserId: 10002
         GroupId: 10002
         MountPoints:
-          - ServerAddr: '1213e74b022-hag27.cn-hongkong.nas.aliyuncs.com:/'
+          - ServerAddr: '1213e74b022-hag27.cn-hongkong.nas.aliyuncs.com:/php-swoole'
             MountDir: /mnt/nas
       InternetAccess: true
     php-swoole:
@@ -26,11 +26,14 @@ Resources:
         Runtime: custom
         Timeout: 1
         MemorySize: 128
+        InstanceConcurrency: 1
         EnvironmentVariables:
           LD_LIBRARY_PATH: >-
-            /mnt/nas/root/usr/lib:/mnt/nas/root/usr/lib/x86_64-linux-gnu:/mnt/nas/root/lib/x86_64-linux-gnu:/mnt/nas/root/usr/lib64:/code/.fun/root/usr/lib:/code/.fun/root/usr/lib/x86_64-linux-gnu:/code/.fun/root/lib/x86_64-linux-gnu:/code/.fun/root/usr/lib64:/code:/code/lib:/usr/local/lib:/mnt/nas/usr/lib:/mnt/nas/usr/lib/x86_64-linux-gnu:/mnt/nas/lib/x86_64-linux-gnu:/mnt/nas/usr/lib64
+            /mnt/nas/root/usr/lib:/mnt/nas/root/usr/lib/x86_64-linux-gnu:/mnt/nas/root/lib/x86_64-linux-gnu:/mnt/nas/root/usr/lib64:/code/.fun/root/usr/lib:/code/.fun/root/usr/lib/x86_64-linux-gnu:/code/.fun/root/lib/x86_64-linux-gnu:/code/.fun/root/usr/lib64:/code:/code/lib:/usr/local/lib
+          NODE_PATH: >-
+            /code/.fun/root/usr/local/bin:/code/.fun/root/usr/local/sbin:/code/.fun/root/usr/bin:/code/.fun/root/usr/sbin:/code/.fun/root/sbin:/code/.fun/root/bin:/code/.fun/python/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:/bin:/mnt/nas/root/usr/local/bin:/mnt/nas/root/usr/local/sbin:/mnt/nas/root/usr/bin:/mnt/nas/root/usr/sbin:/mnt/nas/root/sbin:/mnt/nas/root/bin:/mnt/nas/node_modules/.bin:/mnt/nas/node_modules:/usr/local/lib/node_modules
           PATH: >-
-            /code/.fun/root/usr/local/bin:/code/.fun/root/usr/local/sbin:/code/.fun/root/usr/bin:/code/.fun/root/usr/sbin:/code/.fun/root/sbin:/code/.fun/root/bin:/code/.fun/python/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:/bin:/mnt/nas/usr/local/bin:/mnt/nas/usr/local/sbin:/mnt/nas/usr/bin:/mnt/nas/usr/sbin:/mnt/nas/sbin:/mnt/nas/bin
+            /code/.fun/root/usr/local/bin:/code/.fun/root/usr/local/sbin:/code/.fun/root/usr/bin:/code/.fun/root/usr/sbin:/code/.fun/root/sbin:/code/.fun/root/bin:/code/.fun/python/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:/bin:/mnt/nas/root/usr/local/bin:/mnt/nas/root/usr/local/sbin:/mnt/nas/root/usr/bin:/mnt/nas/root/usr/sbin:/mnt/nas/root/sbin:/mnt/nas/root/bin:/mnt/nas/node_modules/.bin
           PYTHONPATH: >-
             /mnt/nas/python/lib/python2.7/site-packages:/mnt/nas/python/lib/python3.6/site-packages
           PYTHONUSERBASE: /code/.fun/python
@@ -52,6 +55,7 @@ Resources:
         Runtime: php7.2
         Timeout: 1
         MemorySize: 128
+        InstanceConcurrency: 1
         EnvironmentVariables: {}
       Events:
         http:

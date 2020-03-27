@@ -1,3 +1,0 @@
-# libicu64 installs multiple shared libraries, none of which is
-# actually called libicu.so.64, but all of which are libicu*.so.64.
-libicu64: package-name-doesnt-match-sonames libicudata64 libicui18n64 libicuio64 libicutest64 libicutu64 libicuuc64

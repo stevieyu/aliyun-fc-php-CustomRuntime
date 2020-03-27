@@ -1,5 +1,0 @@
-libphp7.4-embed: embedded-library usr/lib/libphp7.4.so: file
-libphp7.4-embed: embedded-library usr/lib/php7.4/libphp7.4-*.so: file
-libphp7.4-embed: package-name-doesnt-match-sonames libphp7
-libphp7.4-embed: ldconfig-symlink-missing-for-shlib usr/lib/libphp7.so usr/lib/libphp7.4.so libphp7.so
-libphp7.4-embed: shlib-without-versioned-soname usr/lib/libphp7.4.so libphp7.so
