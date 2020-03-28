@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# php7.4 -c /code /mnt/nas/http.php
-/mnt/nas/root/usr/bin/php7.4 -c /code /mnt/nas/laravel/bin/laravels start
+#/mnt/nas/root/usr/bin/php7.4 -c /code /mnt/nas/http.php
+# /mnt/nas/root/usr/bin/php7.4 -c /code /mnt/nas/laravel/bin/laravels start
+/mnt/nas/root/usr/bin/php7.4 -c /code /mnt/nas/lumen/bin/laravels start
 
-# /mnt/nas/root/usr/bin/php7.4 -S 0.0.0.0:${FC_SERVER_PORT} -t /mnt/nas
+# /mnt/nas/root/usr/bin/php7.4 -c /code -S 0.0.0.0:${FC_SERVER_PORT} -t /mnt/nas
