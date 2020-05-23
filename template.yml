@@ -14,7 +14,7 @@ Resources:
         UserId: 10002
         GroupId: 10002
         MountPoints:
-          - ServerAddr: '1213e74b022-hag27.cn-hongkong.nas.aliyuncs.com:/php-swoole'
+          - ServerAddr: '12fe5d4bab2-slg38.cn-hongkong.nas.aliyuncs.com:/php-swoole'
             MountDir: /mnt/nas
     php-swoole:
       Type: 'Aliyun::Serverless::Function'
