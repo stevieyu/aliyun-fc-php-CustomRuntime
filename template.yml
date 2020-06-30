@@ -5,17 +5,6 @@ Resources:
     Type: 'Aliyun::Serverless::Service'
     Properties:
       Description: helloworld
-      VpcConfig:
-        VpcId: vpc-j6ccne7rjafmtgh7zrk4o
-        VSwitchIds:
-          - vsw-j6conwtcfurx5uhogyb2j
-        SecurityGroupId: sg-j6ci9xnerwj6bvj0e4ej
-      NasConfig:
-        UserId: 10002
-        GroupId: 10002
-        MountPoints:
-          - ServerAddr: '12fe5d4bab2-slg38.cn-hongkong.nas.aliyuncs.com:/php-swoole'
-            MountDir: /mnt/nas
     php-swoole:
       Type: 'Aliyun::Serverless::Function'
       Properties:
@@ -39,3 +28,13 @@ Resources:
               - PUT
               - GET
               - DELETE
+  Domain:
+    Type: Aliyun::Serverless::CustomDomain
+    Properties:
+      DomainName: Auto
+      Protocol: HTTP
+      RouteConfig:
+        Routes:
+          "/*":
+            ServiceName: customruntime
+            FunctionName: php-swoole

@@ -1,7 +1,13 @@
 #!/bin/bash
+set +e
 
-#/mnt/nas/root/usr/bin/php7.4 -c /code /mnt/nas/http.php
-# /mnt/nas/root/usr/bin/php7.4 -c /code /mnt/nas/laravel/bin/laravels start
-/mnt/nas/root/usr/bin/php7.4 -c /code /mnt/nas/lumen/bin/laravels start
+mkdir -p /tmp/var/sessions/
+mkdir -p /tmp/storage/framework/views
+mkdir -p /tmp/storage/framework/sessions
 
-# /mnt/nas/root/usr/bin/php7.4 -c /code -S 0.0.0.0:${FC_SERVER_PORT} -t /mnt/nas
+export STORAGE_PATH=/tmp/storage
+
+#/code/.fun/root/usr/bin/php7.4 -c /code /code/http.php
+/code/.fun/root/usr/bin/php7.4 /code/lumen/bin/laravels start
+
+# /code/.fun/root/usr/bin/php7.4 -c /code -S 0.0.0.0:${FC_SERVER_PORT} -t /code

@@ -1,6 +1,6 @@
 RUNTIME custom
 
-RUN sed -i -E 's/(security-cdn|deb).debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list && \
+RUN sed -i -E 's/(security|deb).debian.org/mirrors-hk.oss-cn-hongkong.aliyuncs.com/g' /etc/apt/sources.list && \
 	apt-get update
 
 RUN apt-get -y install apt-transport-https lsb-release ca-certificates wget && \
@@ -13,6 +13,7 @@ RUN fun-install apt-get install php7.4-common
 RUN fun-install apt-get install php7.4-cli
 RUN fun-install apt-get install php7.4-mbstring
 RUN fun-install apt-get install php7.4-mysql
+RUN fun-install apt-get install php7.4-pgsql
 RUN fun-install apt-get install php7.4-xml
 RUN fun-install apt-get install php7.4-xmlrpc
 RUN fun-install apt-get install php7.4-soap
@@ -24,17 +25,12 @@ RUN fun-install apt-get install php7.4-curl
 RUN fun-install apt-get install php7.4-json
 RUN fun-install apt-get install php7.4-opcache
 RUN fun-install apt-get install php7.4-readline
+RUN fun-install apt-get install php7.4-imagick
+RUN fun-install apt-get install php7.4-imap
+RUN fun-install apt-get install php7.4-sqlite3
 RUN fun-install apt-get install libedit2
 RUN fun-install apt-get install libncurses5
 
-RUN apt-get install -y php7.4-dev && \
-	cd / && \
-	wget http://yzmxg.oss-cn-hongkong.aliyuncs.com/swoole/swoole-src/archive/master.zip && \
-	unzip master.zip && rm master.zip && \
-	cd swoole-src-master && \
-	phpize && ./configure && make && make install && \
-	cp /usr/lib/php/20190902/swoole.so /code/.fun/root//usr/lib/php/20190902/swoole.so
-
-RUN ln -s /code/.fun/root/usr/bin/php7.4 /code/.fun/root/usr/bin/php && \
-	ln -s /code/.fun/root/usr/bin/phar7.4 /code/.fun/root/usr/bin/phar && \
-	ln -s /code/.fun/root/usr/bin/phar.phar7.4 /code/.fun/root/usr/bin/phar.phar
+RUN apt-get install -y php7.4-dev php-pear && \
+	yes | pecl install swoole && \
+	cp /usr/lib/php/20190902/swoole.so /code/.fun/root/usr/lib/php/20190902/swoole.so
