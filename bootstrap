@@ -2,8 +2,7 @@
 set +e
 
 mkdir -p /tmp/var/sessions/
-mkdir -p /tmp/storage/framework/views
-mkdir -p /tmp/storage/framework/sessions
+cp -rf lumen/storage /tmp
 
 export STORAGE_PATH=/tmp/storage
 

@@ -20,5 +20,5 @@ base_path('storage/laravels.json') => storage_path('laravels.json')
 ------
 
 lumen/vendor/hhxsv5/laravel-s/src/Console/Portal.php
-$this->basePath . '/storage/laravels.json' =>  '/tmp/laravels.json'
+$this->basePath . '/storage/laravels.json' =>  '/tmp/storage/laravels.json'
 ```
