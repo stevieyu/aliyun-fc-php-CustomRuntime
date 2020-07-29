@@ -11,14 +11,14 @@ fun nas sync
 fun deploy
 ```
 
-swoole 文件修改
+lumen 文件修改
 ```
 lumen/vendor/hhxsv5/laravel-s/src/Illuminate/LaravelSCommand.php
 
-base_path('storage/laravels.json') => storage_path('laravels.json')
+base_path('storage/ => storage_path('
 
 ------
 
 lumen/vendor/hhxsv5/laravel-s/src/Console/Portal.php
-$this->basePath . '/storage/laravels.json' =>  '/tmp/storage/laravels.json'
+$this->basePath . '/ =>  '/tmp/
 ```

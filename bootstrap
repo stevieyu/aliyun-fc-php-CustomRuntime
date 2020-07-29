@@ -7,6 +7,9 @@ cp -rf lumen/storage /tmp
 export STORAGE_PATH=/tmp/storage
 
 #/code/.fun/root/usr/bin/php7.4 -c /code /code/http.php
-/code/.fun/root/usr/bin/php7.4 /code/lumen/bin/laravels start
+#/code/.fun/root/usr/bin/php7.4 /code/lumen/bin/laravels start
 
 # /code/.fun/root/usr/bin/php7.4 -c /code -S 0.0.0.0:${FC_SERVER_PORT} -t /code
+
+
+php /code/mark-demo/serve.php start
