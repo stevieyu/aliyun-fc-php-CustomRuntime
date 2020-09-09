@@ -11,14 +11,18 @@ fun nas sync
 fun deploy
 ```
 
+```sh
+composer install --no-dev
+```
+
 lumen 文件修改
 ```
-lumen/vendor/hhxsv5/laravel-s/src/Illuminate/LaravelSCommand.php
+lumen/vendor/hhxsv5/laravel-s/src/Illuminate/LaravelSCommand.php:204
 
 base_path('storage/ => storage_path('
 
 ------
 
-lumen/vendor/hhxsv5/laravel-s/src/Console/Portal.php
+lumen/vendor/hhxsv5/laravel-s/src/Console/Portal.php:314
 $this->basePath . '/ =>  '/tmp/
 ```
