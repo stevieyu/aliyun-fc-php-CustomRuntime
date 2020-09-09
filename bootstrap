@@ -13,3 +13,4 @@ export STORAGE_PATH=/tmp/storage
 
 
 php /code/mark-demo/serve.php start
+#php /code/mark-demo/proxy.php start
