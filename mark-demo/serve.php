@@ -10,6 +10,10 @@ $api = new App('http://0.0.0.0:'.($_ENV['FC_SERVER_PORT'] ?? 9000));
 
 $api->count = 1; // process count
 
+$api->any('/2016-08-15/proxy/customruntime/php-swoole', function ($requst) {
+    return 'Hello world';
+});
+
 $api->any('/', function ($requst) {
     return 'Hello world';
 });

@@ -1,0 +1,2 @@
+php8.0-cli: embedded-library usr/bin/php8.0: file
+php8.0-cli: php-script-with-unusual-interpreter usr/bin/phar8.0.phar /usr/bin/php8.0

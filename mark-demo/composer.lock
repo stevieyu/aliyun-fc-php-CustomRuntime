@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "mark-php/mark",
-            "version": "v1.1.4",
+            "version": "v1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/passwalls/mark.git",
-                "reference": "034cadc053e0722fe1e513b54623f2046e109739"
+                "reference": "7e87a3cf6efd827fc3936e691151fc8627236675"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/passwalls/mark/zipball/034cadc053e0722fe1e513b54623f2046e109739",
-                "reference": "034cadc053e0722fe1e513b54623f2046e109739",
+                "url": "https://api.github.com/repos/passwalls/mark/zipball/7e87a3cf6efd827fc3936e691151fc8627236675",
+                "reference": "7e87a3cf6efd827fc3936e691151fc8627236675",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -45,7 +45,11 @@
                 "MIT"
             ],
             "description": "a PHP micro framework based on workerman",
-            "time": "2020-07-03T03:20:20+00:00"
+            "support": {
+                "issues": "https://github.com/passwalls/mark/issues",
+                "source": "https://github.com/passwalls/mark/tree/v1.1.6"
+            },
+            "time": "2020-11-12T06:53:27+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -97,20 +101,24 @@
                 "router",
                 "routing"
             ],
+            "support": {
+                "issues": "https://github.com/nikic/FastRoute/issues",
+                "source": "https://github.com/nikic/FastRoute/tree/master"
+            },
             "time": "2018-02-13T20:26:39+00:00"
         },
         {
             "name": "workerman/workerman",
-            "version": "v4.0.6",
+            "version": "v4.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/walkor/Workerman.git",
-                "reference": "14964ed1f3655e10f8bd0bd45e78fb75104fc9cf"
+                "reference": "5ea330083d2824196914a3a27e9e98892226010e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/walkor/Workerman/zipball/14964ed1f3655e10f8bd0bd45e78fb75104fc9cf",
-                "reference": "14964ed1f3655e10f8bd0bd45e78fb75104fc9cf",
+                "url": "https://api.github.com/repos/walkor/Workerman/zipball/5ea330083d2824196914a3a27e9e98892226010e",
+                "reference": "5ea330083d2824196914a3a27e9e98892226010e",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -149,7 +157,14 @@
                 "asynchronous",
                 "event-loop"
             ],
-            "time": "2020-06-12T16:21:56+00:00"
+            "support": {
+                "email": "walkor@workerman.net",
+                "forum": "http://wenda.workerman.net/",
+                "issues": "https://github.com/walkor/workerman/issues",
+                "source": "https://github.com/walkor/workerman",
+                "wiki": "http://doc.workerman.net/"
+            },
+            "time": "2020-11-16T02:48:15+00:00"
         }
     ],
     "packages-dev": [],
@@ -160,5 +175,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }
