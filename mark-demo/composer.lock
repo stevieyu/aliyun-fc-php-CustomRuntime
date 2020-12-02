@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "mark-php/mark",
-            "version": "v1.1.6",
+            "version": "v1.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/passwalls/mark.git",
-                "reference": "7e87a3cf6efd827fc3936e691151fc8627236675"
+                "reference": "c191377eea98a7e9212426750916e9be20d9d49a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/passwalls/mark/zipball/7e87a3cf6efd827fc3936e691151fc8627236675",
-                "reference": "7e87a3cf6efd827fc3936e691151fc8627236675",
+                "url": "https://api.github.com/repos/passwalls/mark/zipball/c191377eea98a7e9212426750916e9be20d9d49a",
+                "reference": "c191377eea98a7e9212426750916e9be20d9d49a",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -47,9 +47,9 @@
             "description": "a PHP micro framework based on workerman",
             "support": {
                 "issues": "https://github.com/passwalls/mark/issues",
-                "source": "https://github.com/passwalls/mark/tree/v1.1.6"
+                "source": "https://github.com/passwalls/mark/tree/v1.1.9"
             },
-            "time": "2020-11-12T06:53:27+00:00"
+            "time": "2020-12-02T07:33:17+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -109,16 +109,16 @@
         },
         {
             "name": "workerman/workerman",
-            "version": "v4.0.16",
+            "version": "v4.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/walkor/Workerman.git",
-                "reference": "5ea330083d2824196914a3a27e9e98892226010e"
+                "reference": "2998940bb6a3a684842585a248ca1524143858f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/walkor/Workerman/zipball/5ea330083d2824196914a3a27e9e98892226010e",
-                "reference": "5ea330083d2824196914a3a27e9e98892226010e",
+                "url": "https://api.github.com/repos/walkor/Workerman/zipball/2998940bb6a3a684842585a248ca1524143858f6",
+                "reference": "2998940bb6a3a684842585a248ca1524143858f6",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -164,7 +164,7 @@
                 "source": "https://github.com/walkor/workerman",
                 "wiki": "http://doc.workerman.net/"
             },
-            "time": "2020-11-16T02:48:15+00:00"
+            "time": "2020-11-27T04:14:54+00:00"
         }
     ],
     "packages-dev": [],

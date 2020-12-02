@@ -1,40 +1,54 @@
 RUNTIME custom
 
-#RUN sed -i -E 's/(security|deb).debian.org/xg-1251075901.cos.ap-hongkong.myqcloud.com/g' /etc/apt/sources.list
+#mirrors.cloud.tencent.com|mirrors.aliyun.com
+#RUN sed -i -E 's/(security|deb).debian.org/mirrors.cloud.tencent.com/g' /etc/apt/sources.list
 
-RUN export ALL_PROXY=http://192.168.5.44:7890 && export HTTP_PROXY=$ALL_PROXY && export HTTPS_PROXY=$ALL_PROXY && \
-    echo 'Acquire::http::Proxy "'$ALL_PROXY'";' >> /etc/apt/apt.conf && \
-	echo 'Acquire::https::Proxy "'$ALL_PROXY'";' >> /etc/apt/apt.conf
+#RUN export ALL_PROXY=http://192.168.5.39:7890 && export HTTP_PROXY=$ALL_PROXY && export HTTPS_PROXY=$ALL_PROXY && \
+#    echo 'Acquire::http::Proxy "'$ALL_PROXY'";' >> /etc/apt/apt.conf && \
+#	 echo 'Acquire::https::Proxy "'$ALL_PROXY'";' >> /etc/apt/apt.conf
 
-RUN apt-get update && \
-    apt-get -y install apt-transport-https lsb-release ca-certificates wget && \
-	wget --no-check-certificate -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg && \
-	echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
+#RUN apt update && \
+#	apt-get -y install apt-transport-https lsb-release ca-certificates wget && \
+#	wget -O /etc/apt/trusted.gpg.d/nginx.gpg https://packages.sury.org/nginx/apt.gpg && \
+#	sh -c 'echo "deb https://packages.sury.org/nginx/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/nginx.list'
 
 RUN apt-get update
 
 RUN fun-install apt-get install php8.0-common
 RUN fun-install apt-get install php8.0-cli
+RUN fun-install apt-get install php8.0-fpm
 RUN fun-install apt-get install php8.0-mbstring
 RUN fun-install apt-get install php8.0-mysql
 RUN fun-install apt-get install php8.0-pgsql
+RUN fun-install apt-get install php8.0-sqlite3
+RUN fun-install apt-get install php8.0-odbc
+RUN fun-install apt-get install php8.0-sybase
 RUN fun-install apt-get install php8.0-xml
-RUN fun-install apt-get install php8.0-xmlrpc
+RUN fun-install apt-get install php8.0-xsl
 RUN fun-install apt-get install php8.0-soap
 RUN fun-install apt-get install php8.0-gd
+RUN fun-install apt-get install php8.0-bcmath
 RUN fun-install apt-get install php8.0-intl 
 RUN fun-install apt-get install php8.0-ldap
 RUN fun-install apt-get install php8.0-zip
+RUN fun-install apt-get install php8.0-bz2
 RUN fun-install apt-get install php8.0-curl
-RUN fun-install apt-get install php8.0-json
 RUN fun-install apt-get install php8.0-opcache
 RUN fun-install apt-get install php8.0-readline
 RUN fun-install apt-get install php8.0-imagick
 RUN fun-install apt-get install php8.0-imap
-RUN fun-install apt-get install php8.0-sqlite3
+RUN fun-install apt-get install php8.0-tidy
 RUN fun-install apt-get install libedit2
 RUN fun-install apt-get install libncurses5
 
-#RUN apt-get install -y php8.0-dev php-pear && \
-#	yes | pecl install swoole && \
-#	cp /usr/lib/php/20200930/swoole.so /code/.fun/root/usr/lib/php/20200930/swoole.so
+RUN apt-get install -y php8.0-dev git build-essential
+
+RUN cd ~ && \
+	git clone --depth=1 https://github.com/swoole/swoole-src.git && \
+	cd swoole-src && \
+	phpize && \
+	./configure && \
+	make && make install && \
+	rm -rf swoole-src && \
+	cp /usr/lib/php/20200930/swoole.so /code/.fun/root/usr/lib/php/20200930/swoole.so
+
