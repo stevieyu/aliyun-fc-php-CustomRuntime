@@ -24,5 +24,5 @@ base_path('storage/ => storage_path('
 ------
 
 lumen/vendor/hhxsv5/laravel-s/src/Console/Portal.php:314
-$this->basePath . '/ =>  '/tmp/
+$this->basePath . '/ =>  getenv('STORAGE_PATH').'/
 ```
