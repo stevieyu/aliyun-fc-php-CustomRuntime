@@ -57,7 +57,13 @@ RUN apt-get install -y php8.0-dev git build-essential && \
 	cp /usr/lib/php/20200930/swoole.so /code/.fun/root/usr/lib/php/20200930/swoole.so
 
 RUN cp -rf /etc/php/8.0/cli/php.ini /code/.fun/root/etc/php/8.0/cli/php.ini && \
-	cp -rf /etc/php/8.0/mods-available /code/.fun/root/etc/php/8.0 && \
-	echo 'extension_dir = "/code/.fun/root/usr/lib/php/20200930/"' >> /code/.fun/root/etc/php/8.0/cli/php.ini
+	echo 'extension_dir = "/code/.fun/root/usr/lib/php/20200930/"' >> /code/.fun/root/etc/php/8.0/cli/php.ini && \
+	cp -rf /etc/php/8.0/fpm/php.ini /code/.fun/root/etc/php/8.0/fpm/php.ini && \
+	echo 'extension_dir = "/code/.fun/root/usr/lib/php/20200930/"' >> /code/.fun/root/etc/php/8.0/fpm/php.ini && \
+	cp -rf /etc/php/8.0/mods-available /code/.fun/root/etc/php/8.0
+
+
+
+
 
 
