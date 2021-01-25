@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set +e
 
 mkdir -p /tmp/var/sessions/
 cp -rf lumen/storage /tmp
 
-export STORAGE_PATH=/tmp/storage
+export APP_STORAGE_PATH=/tmp/storage
 
 export PHP_INI_PATH=/code/php.ini
 
