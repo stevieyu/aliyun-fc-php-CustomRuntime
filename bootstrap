@@ -6,11 +6,13 @@ cp -rf lumen/storage /tmp
 
 export APP_STORAGE_PATH=/tmp/storage
 
-export PHP_INI_PATH=/code/php.ini
+export PHPRC=/code/.fun/root/etc/php/8.0/cli
+export PHP_INI_SCAN_DIR=/code/.fun/root/etc/php/8.0/mods-available
 
-#php8.0 -c $PHP_INI_PATH /code/http.php
-php8.0 -c $PHP_INI_PATH /code/lumen/bin/laravels start
+#export PHP_INI_PATH=/code/php.ini
+
+#php8.0 -c $PHP_INI_PATH /code/lumen/bin/laravels start
 
 #php8.0 -c $PHP_INI_PATH -S 0.0.0.0:${FC_SERVER_PORT} -t /code
 
-#php8.0 -c $PHP_INI_PATH -S 0.0.0.0:9000 -t /code
+php -S 0.0.0.0:$FC_SERVER_PORT -t /code
