@@ -14,6 +14,3 @@ php8.0 -c $PHP_INI_PATH /code/lumen/bin/laravels start
 #php8.0 -c $PHP_INI_PATH -S 0.0.0.0:${FC_SERVER_PORT} -t /code
 
 #php8.0 -c $PHP_INI_PATH -S 0.0.0.0:9000 -t /code
-
-#php8.0 -c $PHP_INI_PATH /code/mark-demo/serve.php start
-#php8.0 -c $PHP_INI_PATH /code/mark-demo/proxy.php start
