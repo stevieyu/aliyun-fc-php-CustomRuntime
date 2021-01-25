@@ -23,8 +23,8 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
-if(env('STORAGE_PATH')){
-	$app->useStoragePath(env('STORAGE_PATH'));	
+if(env('APP_STORAGE_PATH')){
+	$app->useStoragePath(env('APP_STORAGE_PATH'));
 }
 
 // $app->withFacades();
