@@ -1,7 +1,7 @@
 template.yml
-.funignore
 .fun/nas
 .fun/tmp
 readme.md
 README.md
-.gitignore
+
+lumen/.idea
