@@ -5,6 +5,7 @@ export PHPRC=/code/php-ini
 export PHP_INI_SCAN_DIR=/code/php-ini/conf.d
 
 export APP_STORAGE_PATH=/tmp/storage
+mkdir -p $APP_STORAGE_PATH
 cp -rf lumen/storage/* $APP_STORAGE_PATH
 
 export LARAVELS_LISTEN_IP=0.0.0.0
