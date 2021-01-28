@@ -4,14 +4,13 @@ set +e
 export PHPRC=/code/php-ini
 export PHP_INI_SCAN_DIR=/code/php-ini/conf.d
 
-mkdir -p /tmp/var/sessions/
-cp -rf lumen/storage /tmp
+export APP_STORAGE_PATH=/tmp/storage
+cp -rf lumen/storage/* $APP_STORAGE_PATH
 
 export LARAVELS_LISTEN_IP=0.0.0.0
-export LARAVELS_LISTEN_PORT=9000
-export APP_STORAGE_PATH=/tmp/storage
+export LARAVELS_LISTEN_PORT=$FC_SERVER_PORT
 
 php8.0 /code/lumen/bin/laravels start
-#php8.0 -S 0.0.0.0:9000 -t /code/lumen/public
+#php8.0 -S 0.0.0.0:$FC_SERVER_PORT -t /code/lumen/public
 
 #php8.0 -S 0.0.0.0:$FC_SERVER_PORT -t /code
